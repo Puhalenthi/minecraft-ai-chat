@@ -6,7 +6,7 @@ from openai import OpenAI
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"
-model_name = "gpt-4o"
+model_name = "gpt-4o-mini"
 
 client = OpenAI(
     base_url=endpoint,
@@ -17,7 +17,7 @@ def getCommand(username, prompt):
     response = client.chat.completions.create(
         messages = [
                 {"role" : "system",
-                "content" : "You are a Minecraft command line chatbot in MC version 1.20.1. Your role is to read a request from the user and output a valid Minecraft command that accomplishes it. ONLY output the command (without markdown): " + prompt + ". Player's username that is requesting this is: " + username}
+                "content" : "You are a Minecraft command line chatbot in MC version 1.20.1. Your role is to read a request from the user and output a valid Minecraft command that accomplishes it. ONLY output the valid command with the backslash (without markdown): " + prompt + ". Player's username that is requesting this is: " + username}
             ],
         model=model_name,
         temperature=1.0,
@@ -29,7 +29,7 @@ def getCommand(username, prompt):
     # print('Prompt Tokens - ' + str(response["usage"]["prompt_tokens"]))
     # print('Total Tokens - ' + str(response["usage"]["total_tokens"]))
     # return response["choices"][0]["message"]["content"]
-    print(response.choices[0].message.content)
+    return response.choices[0].message.content
 
 
 def main(prompt, username):
@@ -49,8 +49,8 @@ def mcchatbot():
     username = urllib.parse.unquote_plus(username)
     command = main(username, prompt)
     print(command)
-    print('\n---------------------------------------------------------------------------------\n')
     return command
+    print('\n---------------------------------------------------------------------------------\n')
 
 if __name__ == "__main__":
     flaskApp.run()
