@@ -1,9 +1,20 @@
-# Fabric Example Mod
+# Minecraft AI Helper
+A simple AI utility that converts a prompt using natural language into a Minecraft command
 
 ## Setup
+> [!IMPORTANT]  
+> Must have access to the OpenAI API.
+  - Clone repo: `git clone https://github.com/Puhalenthi/minecraft-ai-chat.git`
+  - Create a GitHub PAT and put it inside a .env: `GITHUB_TOKEN=[TOKEN]`
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+## How to run
+  - Start python api: `python api.py`
+  - Run gradle: `./gradlew runClient()`
 
-## License
+## How to use
+`\conjure [prompt]`
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+Ex:
+  - `\conjure "Summon all entities to my location"`
+  - `\conjure "Give me a netherite sword with level 10 sharpness and level 17 knockback"`
+  - `\conjure "Bestow upon me all status affects at this very moment!"`
