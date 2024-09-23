@@ -12,9 +12,9 @@ A simple AI utility that converts a prompt using natural language into a Minecra
   - Run gradle: `./gradlew runClient()`
 
 ## How to use
-`\conjure [prompt]`
+`/conjure [prompt]`
 
 Ex:
-  - `\conjure "Summon all entities to my location"`
-  - `\conjure "Give me a netherite sword with level 10 sharpness and level 17 knockback"`
-  - `\conjure "Bestow upon me all status affects at this very moment!"`
+  - `/conjure "Summon all entities to my location"`
+  - `/conjure "Give me a netherite sword with level 10 sharpness and level 17 knockback"`
+  - `/conjure "Bestow upon me all status affects at this very moment!"`
