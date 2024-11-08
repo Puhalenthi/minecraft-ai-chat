@@ -1,5 +1,5 @@
 # Minecraft AI Helper
-A simple AI utility that converts a prompt using natural language into a Minecraft command
+A simple AI utility that converts a prompt using NLP into a Minecraft command
 
 ## Setup
 > [!IMPORTANT]  
